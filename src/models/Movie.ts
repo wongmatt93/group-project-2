@@ -1,4 +1,5 @@
 export default interface Movie {
+  id: number;
   title: string;
   adult: boolean;
   overview: string;
@@ -6,5 +7,4 @@ export default interface Movie {
   poster_path: string;
   release_date: string;
   genre_id: number[];
-  media_type?: string | undefined;
 }

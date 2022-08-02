@@ -13,4 +13,14 @@ const getPopularMovies = (): Promise<TmdbResponse> => {
     });
 };
 
-export { getPopularMovies };
+const getMoviesBySearchTerm = (searchTerm: string): Promise<TmdbResponse> => {
+  return axios
+    .get("https://api.themoviedb.org/3/search/movie", {
+      params: { api_key: key, query: searchTerm },
+    })
+    .then((response) => {
+      return response.data;
+    });
+};
+
+export { getPopularMovies, getMoviesBySearchTerm };

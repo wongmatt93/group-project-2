@@ -1,27 +1,34 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Movie from "../models/Movie";
-import { getPopularMovies } from "../services/TmdbService";
+import {
+  getMoviesBySearchTerm,
+  getPopularMovies,
+} from "../services/TmdbService";
 import "./Main.css";
+import MovieList from "./MovieList";
+import SearchForm from "./SearchForm";
 
 const Main = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
+  // const [searchTerm, setSearchTerm] = useState("");
+  const [searchParams] = useSearchParams();
+  const searchTerm = searchParams.get("query");
 
   useEffect(() => {
-    getPopularMovies().then((response) => setMovies(response.results));
-  }, []);
+    if (searchTerm) {
+      getMoviesBySearchTerm(searchTerm).then((response) =>
+        setMovies(response.results)
+      );
+    } else {
+      getPopularMovies().then((response) => setMovies(response.results));
+    }
+  }, [searchTerm]);
 
   return (
     <div className="Main">
-      {movies.map((movie) => (
-        <>
-          <p>{movie.vote_average}</p>
-          <p>{movie.title}</p>
-          <p>{movie.poster_path}</p>
-          <p>{movie.release_date}</p>
-          <p>{movie.genre_id}</p>
-          <p>{movie.media_type}</p>
-        </>
-      ))}
+      <SearchForm />
+      <MovieList movies={movies} />
     </div>
   );
 };
