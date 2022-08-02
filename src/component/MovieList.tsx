@@ -1,7 +1,21 @@
+import Movie from "../models/Movie";
+import MovieCard from "./MovieCard";
 import "./MovieList.css";
 
-const MovieList = () => {
-  return <div className="MovieList">MovieList works</div>;
+interface Props {
+  movies: Movie[];
+}
+
+const MovieList = ({ movies }: Props) => {
+  return (
+    <div className="MovieList">
+      <ul>
+        {movies.map((movie) => (
+          <MovieCard movie={movie} key={`${movie.id}`} />
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default MovieList;
