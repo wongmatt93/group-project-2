@@ -22,5 +22,17 @@ const getMoviesBySearchTerm = (searchTerm: string): Promise<TmdbResponse> => {
       return response.data;
     });
 };
+const getMoviesByDiscover = (
+  genres: string | null,
+  year: string | null
+): Promise<TmdbResponse> => {
+  return axios
+    .get("https://api.themoviedb.org/3/discover/movie", {
+      params: { api_key: key, with_genres: genres, year: year },
+    })
+    .then((response) => {
+      return response.data;
+    });
+};
 
-export { getPopularMovies, getMoviesBySearchTerm };
+export { getPopularMovies, getMoviesBySearchTerm, getMoviesByDiscover };
