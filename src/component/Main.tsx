@@ -19,7 +19,7 @@ const Main = () => {
   const [searchParams] = useSearchParams();
   const searchTerm = searchParams.get("query");
   const genres = searchParams.get("with_genres");
-  const year = searchParams.get("year");
+  const year = searchParams.get("primary_release_year");
 
   useEffect(() => {
     if (searchTerm) {

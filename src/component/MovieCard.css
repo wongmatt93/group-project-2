@@ -1,3 +1,6 @@
+.MovieCard {
+  list-style: none;
+}
 .MovieCard img {
   height: 100px;
 }
