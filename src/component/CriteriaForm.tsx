@@ -10,7 +10,10 @@ const CriteriaForm = () => {
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
     navigate(
-      `/discover?${new URLSearchParams({ with_genres: genre, year: year })}`
+      `/discover?${new URLSearchParams({
+        with_genres: genre,
+        primary_release_year: year,
+      })}`
     );
   };
 

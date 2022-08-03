@@ -1,4 +1,5 @@
 import axios from "axios";
+import SingleMovieResponse from "../models/SingleMovieResponse";
 import TmdbResponse from "../models/TmdbResponse";
 
 const key: string = process.env.REACT_APP_API_KEY || "";
@@ -28,11 +29,25 @@ const getMoviesByDiscover = (
 ): Promise<TmdbResponse> => {
   return axios
     .get("https://api.themoviedb.org/3/discover/movie", {
-      params: { api_key: key, with_genres: genres, year: year },
+      params: { api_key: key, with_genres: genres, primary_release_year: year },
+    })
+    .then((response) => {
+      return response.data;
+    });
+};
+const getMovieById = (id: number): Promise<SingleMovieResponse> => {
+  return axios
+    .get(`https://api.themoviedb.org/3/movie/${encodeURIComponent(id)}`, {
+      params: { api_key: key },
     })
     .then((response) => {
       return response.data;
     });
 };
 
-export { getPopularMovies, getMoviesBySearchTerm, getMoviesByDiscover };
+export {
+  getPopularMovies,
+  getMoviesBySearchTerm,
+  getMoviesByDiscover,
+  getMovieById,
+};
