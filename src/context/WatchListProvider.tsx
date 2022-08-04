@@ -1,5 +1,6 @@
 import { ReactNode, useState } from "react";
 import Movie from "../models/Movie";
+import SingleMovieResponse from "../models/SingleMovieResponse";
 import WatchListContext from "./WatchListContext";
 
 interface Props {
@@ -7,8 +8,10 @@ interface Props {
 }
 
 const WatchListContextProvider = ({ children }: Props) => {
-  const [watchList, setWatchList] = useState<Movie[]>([]);
-  const addWatchList = (movie: Movie): void => {
+  const [watchList, setWatchList] = useState<(Movie | SingleMovieResponse)[]>(
+    []
+  );
+  const addWatchList = (movie: Movie | SingleMovieResponse): void => {
     setWatchList((prev) => [...prev, movie]);
   };
   const removeWatchList = (id: number): void => {

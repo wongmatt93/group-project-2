@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import WatchListContext from "../context/WatchListContext";
 import Movie from "../models/Movie";
+import SingleMovieResponse from "../models/SingleMovieResponse";
 import "./MovieCard.css";
 
 interface Props {
-  movie: Movie;
+  movie: Movie | SingleMovieResponse;
 }
 
 const MovieCard = ({ movie }: Props) => {

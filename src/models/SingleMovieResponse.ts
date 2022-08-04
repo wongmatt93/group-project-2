@@ -1,7 +1,4 @@
-interface Genre {
-  id: number;
-  name: string;
-}
+import Genre from "./Genre";
 
 export default interface SingleMovieResponse {
   id: number;
