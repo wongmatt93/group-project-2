@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import Movie from "../models/Movie";
+import SingleMovieResponse from "../models/SingleMovieResponse";
 
 interface WatchListContextModel {
   watchList: Movie[];
