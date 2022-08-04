@@ -45,6 +45,8 @@ const CriteriaForm = () => {
         type="number"
         id="year"
         value={year}
+        min="1880"
+        max="2022"
         onChange={(e) => setYear(e.target.value)}
       />
       <button>Advanced Search</button>

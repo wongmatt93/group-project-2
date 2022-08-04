@@ -20,26 +20,42 @@ const MovieOverview = () => {
       {movie ? (
         <>
           <h2>{`${movie.title} (${parseInt(movie.release_date)})`}</h2>
-          <img
-            src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`}
-            alt={movie.title}
-          />
-          <p>{`${movie.runtime} mins`}</p>
-          <p>{movie.genres[0].name}</p>
-          <p>{`Rating: ${movie.vote_average.toFixed(1)}/10`}</p>
-          <p>{movie.overview}</p>
+          <div className="wtf5">
+            <img
+              src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`}
+              alt={movie.title}
+            />
 
-          {isWatchList(movie.id) ? (
-            <i
-              className="fa-solid fa-star"
-              onClick={() => removeWatchList(movie.id)}
-            ></i>
-          ) : (
-            <i
-              className="fa-regular fa-star"
-              onClick={() => addWatchList(movie)}
-            ></i>
-          )}
+            <div>
+              <div className="wtf2">
+                <p>
+                  <div className="wtf3">Length:</div>
+                  {` ${movie.runtime} mins`}
+                </p>
+                <p>
+                  <div className="wtf3">Genre:</div>
+                  {` ${movie.genres[0].name}`}
+                </p>
+                <p>
+                  <div className="wtf3">Rating:</div>
+                  {` ${movie.vote_average.toFixed(1)}/10`}
+                </p>
+              </div>
+              <p>{movie.overview}</p>
+
+              {isWatchList(movie.id) ? (
+                <i
+                  className="fa-solid fa-star"
+                  onClick={() => removeWatchList(movie.id)}
+                ></i>
+              ) : (
+                <i
+                  className="fa-regular fa-star"
+                  onClick={() => addWatchList(movie)}
+                ></i>
+              )}
+            </div>
+          </div>
         </>
       ) : (
         <p>404 Error</p>

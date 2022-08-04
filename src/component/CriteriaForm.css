@@ -8,10 +8,16 @@
 .CriteriaForm .year {
   margin-left: 20px;
 }
+
 .CriteriaForm #year {
   width: 50px;
 }
 
-button {
+.CriteriaForm button {
   margin-left: 10px;
+}
+
+.CriteriaForm label {
+  margin-right: 5px;
+  font-family: "Hind", sans-serif;
 }
