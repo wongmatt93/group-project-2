@@ -11,7 +11,6 @@ import {
 import CriteriaForm from "./CriteriaForm";
 import "./Main.css";
 import MovieList from "./MovieList";
-import SearchForm from "./SearchForm";
 
 const Main = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -38,6 +37,11 @@ const Main = () => {
   return (
     <div className="Main">
       <CriteriaForm />
+      {searchTerm || genres || year ? (
+        <h2>Search Results</h2>
+      ) : (
+        <h2>Trending Movies</h2>
+      )}
       <MovieList movies={movies} />
     </div>
   );

@@ -1,3 +1,46 @@
 .MovieOverview img {
   height: 300px;
 }
+
+.MovieOverview {
+  font-family: "Hind", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.MovieOverview p {
+  padding: 3px 50px;
+}
+
+.MovieOverview .wtf2 {
+  display: flex;
+  padding: 15px 0px;
+  justify-content: center;
+}
+
+.MovieOverview .wtf3 {
+  color: hotpink;
+}
+
+.MovieOverview h2 {
+  padding: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .MovieOverview {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+  }
+  .MovieOverview .wtf5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .MovieOverview img {
+    margin-left: 50px;
+    height: 400px;
+    box-shadow: 2px 2px 2px 2px rgb(25, 24, 24);
+  }
+}

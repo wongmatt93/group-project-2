@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #8b5fbf;
+  background-color: #083449;
   padding: 0 40px;
   font-family: "Italiana", serif;
 }
@@ -28,4 +28,10 @@
   border-bottom: 1px solid rgb(255, 255, 255, 0.5);
   padding-top: 2px;
   opacity: 25;
+}
+
+@media only screen and (max-width: 768px) {
+  .Header {
+    padding: 0 20px;
+  }
 }
