@@ -1,9 +1,10 @@
 import Movie from "../models/Movie";
+import SingleMovieResponse from "../models/SingleMovieResponse";
 import MovieCard from "./MovieCard";
 import "./MovieList.css";
 
 interface Props {
-  movies: Movie[];
+  movies: (Movie | SingleMovieResponse)[];
 }
 
 const MovieList = ({ movies }: Props) => {

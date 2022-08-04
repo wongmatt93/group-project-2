@@ -35,7 +35,10 @@ const MovieOverview = () => {
               onClick={() => removeWatchList(movie.id)}
             ></i>
           ) : (
-            <i className="fa-regular fa-star"></i>
+            <i
+              className="fa-regular fa-star"
+              onClick={() => addWatchList(movie)}
+            ></i>
           )}
         </>
       ) : (

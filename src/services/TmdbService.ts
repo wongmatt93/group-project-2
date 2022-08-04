@@ -1,4 +1,5 @@
 import axios from "axios";
+import GenreResponse from "../models/GenreResponse";
 import SingleMovieResponse from "../models/SingleMovieResponse";
 import TmdbResponse from "../models/TmdbResponse";
 
@@ -45,9 +46,18 @@ const getMovieById = (id: number): Promise<SingleMovieResponse> => {
     });
 };
 
+const getGenres = (): Promise<GenreResponse> => {
+  return axios
+    .get("https://api.themoviedb.org/3/genre/movie/list", {
+      params: { api_key: key },
+    })
+    .then((response) => response.data);
+};
+
 export {
   getPopularMovies,
   getMoviesBySearchTerm,
   getMoviesByDiscover,
   getMovieById,
+  getGenres,
 };

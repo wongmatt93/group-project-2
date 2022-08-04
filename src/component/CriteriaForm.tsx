@@ -1,9 +1,13 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Filters from "../models/Filters";
+import Genre from "../models/Genre";
+import { getGenres } from "../services/TmdbService";
 import "./CriteriaForm.css";
 
 const CriteriaForm = () => {
   const navigate = useNavigate();
+  const [genres, setGenres] = useState<Genre[]>([]);
   const [genre, setGenre] = useState("");
   const [year, setYear] = useState("");
 
@@ -16,6 +20,10 @@ const CriteriaForm = () => {
       })}`
     );
   };
+
+  useEffect(() => {
+    getGenres().then((response) => setGenres(response.genres));
+  }, []);
 
   return (
     <form className="CriteriaForm" onSubmit={(e) => handleSubmit(e)}>

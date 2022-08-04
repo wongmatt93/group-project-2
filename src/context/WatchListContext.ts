@@ -3,8 +3,8 @@ import Movie from "../models/Movie";
 import SingleMovieResponse from "../models/SingleMovieResponse";
 
 interface WatchListContextModel {
-  watchList: Movie[];
-  addWatchList: (movie: Movie) => void;
+  watchList: (Movie | SingleMovieResponse)[];
+  addWatchList: (movie: Movie | SingleMovieResponse) => void;
   removeWatchList: (id: number) => void;
   isWatchList: (id: number) => boolean;
 }
