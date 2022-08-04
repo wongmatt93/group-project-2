@@ -1,0 +1,17 @@
+.CriteriaForm {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.CriteriaForm .year {
+  margin-left: 20px;
+}
+.CriteriaForm #year {
+  width: 50px;
+}
+
+button {
+  margin-left: 10px;
+}

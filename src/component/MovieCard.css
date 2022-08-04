@@ -1,6 +1,23 @@
 .MovieCard {
   list-style: none;
+  width: 30%;
+  height: 20%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  margin: 2px;
+  font-family: "Hind", sans-serif;
+  font-size: 14px;
 }
 .MovieCard img {
-  height: 100px;
+  height: 250px;
+  margin: 5px;
+  border: 2px solid rgb(82, 82, 82);
+}
+.MovieCard:hover {
+  background-color: rgb(33, 31, 31);
 }

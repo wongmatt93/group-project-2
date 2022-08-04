@@ -8,9 +8,14 @@ ul {
 }
 
 .fa-star {
-  color: rgb(236, 84, 84);
+  color: rgb(201, 164, 61);
   font-size: larger;
 }
 .fa-star:hover {
   cursor: pointer;
+}
+
+body {
+  background-color: rgb(18, 18, 18);
+  color: white;
 }

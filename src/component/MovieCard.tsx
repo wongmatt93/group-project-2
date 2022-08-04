@@ -20,7 +20,7 @@ const MovieCard = ({ movie }: Props) => {
           alt={movie.title}
         />
       </Link>
-      <p>{movie.title}</p>
+
       {isWatchList(movie.id) ? (
         <i
           className="fa-solid fa-star"
@@ -32,6 +32,7 @@ const MovieCard = ({ movie }: Props) => {
           onClick={() => addWatchList(movie)}
         ></i>
       )}
+      <p>{movie.title}</p>
     </li>
   );
 };
