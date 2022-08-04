@@ -27,7 +27,7 @@ const CriteriaForm = () => {
 
   return (
     <form className="CriteriaForm" onSubmit={(e) => handleSubmit(e)}>
-      <label htmlFor="genre">Genre</label>
+      <label htmlFor="genre">Genre: </label>
       <select
         id="genre"
         value={genre}
@@ -38,7 +38,9 @@ const CriteriaForm = () => {
         <option value="28">Action</option>
         <option value="18">Drama</option>
       </select>
-      <label htmlFor="year">Year</label>
+      <label htmlFor="year" className="year">
+        Year:
+      </label>
       <input
         type="number"
         id="year"
