@@ -14,16 +14,18 @@ const SearchForm = () => {
   return (
     <form className="SearchForm" onSubmit={(e) => handleSubmit(e)}>
       <label htmlFor="inquiry"></label>
-
-      <input
-        type="text"
-        name="inquiry"
-        id="inquiry"
-        value={inquiry}
-        onChange={(e) => setInquiry(e.target.value)}
-        placeholder="Search movies"
-      />
-      <button>Search</button>
+      <div className="classinput">
+        <i className="fa-solid fa-magnifying-glass"></i>
+        <input
+          type="text"
+          name="inquiry"
+          id="inquiry"
+          value={inquiry}
+          onChange={(e) => setInquiry(e.target.value)}
+          placeholder="Search movies"
+        />
+      </div>
+      {/* <button className="search">Search</button> */}
     </form>
   );
 };

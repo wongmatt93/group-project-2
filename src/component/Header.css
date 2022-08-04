@@ -1,0 +1,32 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #8b5fbf;
+  padding: 0 40px;
+  font-family: "Italiana", serif;
+}
+
+.Header h1 {
+  color: white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 1px -2px gray;
+  font-family: "Italiana", serif;
+  text-shadow: 2px 2px 8px #0e0a13;
+  padding-right: 30px;
+}
+.Header .test {
+  display: flex;
+  align-items: center;
+}
+
+.Header .wtf {
+  color: white;
+}
+.Header .wtf:hover {
+  border-bottom: 1px solid rgb(255, 255, 255, 0.5);
+  padding-top: 2px;
+  opacity: 25;
+}

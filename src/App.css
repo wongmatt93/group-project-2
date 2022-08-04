@@ -1,0 +1,16 @@
+/* resets */
+
+body,
+h1,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.fa-star {
+  color: rgb(236, 84, 84);
+  font-size: larger;
+}
+.fa-star:hover {
+  cursor: pointer;
+}

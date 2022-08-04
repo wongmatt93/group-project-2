@@ -37,7 +37,6 @@ const Main = () => {
 
   return (
     <div className="Main">
-      <SearchForm />
       <CriteriaForm />
       <MovieList movies={movies} />
     </div>
