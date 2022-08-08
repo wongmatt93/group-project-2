@@ -41,7 +41,7 @@ const MovieOverview = () => {
                         return (
                           <p key={genre.id}>
                             {genre.name}
-                            {index < movie.genres.length - 1 ? ", " : ""}
+                            {index < movie.genres.length - 1 ? ", " + "  " : ""}
                           </p>
                         );
                       })}
