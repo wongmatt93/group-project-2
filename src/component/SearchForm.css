@@ -1,18 +1,18 @@
 .SearchForm input {
   /* border-radius: 20px; */
-  width: 275px;
+  width: 25vw;
   height: 40px;
   background-color: transparent;
   color: rgb(212, 207, 207);
   border: none;
-  font-family: "Italiana", serif;
+  font-family: "Hind", sans-serif;
   font-size: large;
   outline: none;
 }
 
 .SearchForm .classinput {
   border-radius: 50px;
-  width: 350px;
+  width: 35vw;
   height: 40px;
   background-color: rgba(0, 0, 0, 0.35);
   color: rgb(209, 209, 209);
@@ -26,10 +26,10 @@
 
 @media only screen and (max-width: 768px) {
   .SearchForm .classinput {
-    width: 165px;
+    width: 50vw;
     margin-right: 10px;
   }
   .SearchForm input {
-    width: 125px;
+    width: 40vw;
   }
 }

@@ -4,11 +4,15 @@
   justify-content: space-between;
   background-color: #083449;
   padding: 0 40px;
-  font-family: "Italiana", serif;
+  font-family: "Hind", sans-serif;
 }
 
-.Header img {
-  width: 100%;
+.Header .mobileimg {
+  height: 90%;
+}
+
+.Header .desktopimg {
+  display: none;
 }
 
 .Header h1 {
@@ -30,12 +34,18 @@
 }
 .Header .wtf:hover {
   border-bottom: 1px solid rgb(255, 255, 255, 0.5);
-  padding-top: 2px;
-  opacity: 25;
+  padding-top: 1px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .Header {
     padding: 0 20px;
+  }
+  .Header .desktopimg {
+    display: block;
+    height: 90%;
+  }
+  .Header .mobileimg {
+    display: none;
   }
 }

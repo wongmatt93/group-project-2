@@ -1,14 +1,21 @@
 .MovieList ul {
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
   overflow-x: auto;
-  /* justify-content: space-evenly; */
+  scrollbar-width: thin;
   margin: 0 7%;
 }
 
-/* @media only screen and (min-width: 768px) {
-  .MovieList ul {
-    margin: 0 5%;
-  }
-} */
+.MovieList ul::-webkit-scrollbar {
+  background-color: #083449;
+  border-radius: 10px;
+}
+
+.MovieList ul::-webkit-scrollbar-thumb {
+  background-color: hotpink;
+  border-radius: 10px;
+}
+
+.MovieList ul::-webkit-scrollbar-thumb:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
