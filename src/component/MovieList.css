@@ -9,11 +9,14 @@
 .MovieList ul::-webkit-scrollbar {
   background-color: #083449;
   border-radius: 10px;
+  height: 20px;
 }
 
 .MovieList ul::-webkit-scrollbar-thumb {
-  background-color: hotpink;
+  background-color: #70c8ff;
   border-radius: 10px;
+  border: 4px solid transparent;
+  background-clip: content-box;
 }
 
 .MovieList ul::-webkit-scrollbar-thumb:active {
