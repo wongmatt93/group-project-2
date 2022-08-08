@@ -1,4 +1,3 @@
-import { generateKeySync } from "crypto";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import WatchListContext from "../context/WatchListContext";
@@ -20,24 +19,24 @@ const MovieOverview = () => {
     <div className="MovieOverview">
       {movie ? (
         <>
-          <h2>{`${movie.title} (${parseInt(movie.release_date)})`}</h2>
-          <div className="wtf5">
+          <div className="overview">
             <img
               src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`}
               alt={movie.title}
             />
 
             <div>
-              <div className="wtf2">
+              <h2>{`${movie.title} (${parseInt(movie.release_date)})`}</h2>
+              <div className="label-container">
                 <div>
-                  <div className="wtf3">Length:</div>
+                  <div className="labeling">Length:</div>
                   <p>{`${movie.runtime} mins`}</p>
                 </div>
                 <div>
                   <>
                     {" "}
-                    <div className="wtf3">Genre:</div>
-                    <div className="wtf6">
+                    <div className="labeling">Genre:</div>
+                    <div className="genre">
                       {movie.genres.map((genre, index) => {
                         return (
                           <p key={genre.id}>
@@ -50,7 +49,7 @@ const MovieOverview = () => {
                   </>
                 </div>
                 <div>
-                  <div className="wtf3">Rating:</div>
+                  <div className="labeling">Rating:</div>
                   <p>{`${movie.vote_average.toFixed(1)}/10`}</p>
                 </div>
               </div>

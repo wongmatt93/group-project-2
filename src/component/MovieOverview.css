@@ -14,13 +14,13 @@
   padding: 3px 50px;
 }
 
-.MovieOverview .wtf2 {
+.MovieOverview .label-container {
   display: flex;
   padding: 15px 0px;
   justify-content: center;
 }
 
-.MovieOverview .wtf3 {
+.MovieOverview .labeling {
   color: hotpink;
 }
 
@@ -30,11 +30,11 @@
 
 @media only screen and (min-width: 768px) {
   .MovieOverview {
-    height: 75vh;
+    /* height: 75vh; */
     display: flex;
     justify-content: center;
   }
-  .MovieOverview .wtf5 {
+  .MovieOverview .overview {
     display: flex;
     justify-content: center;
     align-items: center;
