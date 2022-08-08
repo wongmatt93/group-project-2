@@ -15,6 +15,22 @@ const getPopularMovies = (): Promise<TmdbResponse> => {
     });
 };
 
+const getTrendingMovies = (): Promise<TmdbResponse> => {
+  return axios
+    .get("https://api.themoviedb.org/3/trending/all/day", {
+      params: { api_key: key },
+    })
+    .then((response) => response.data);
+};
+
+const getUpcomingMovies = (): Promise<TmdbResponse> => {
+  return axios
+    .get("https://api.themoviedb.org/3/movie/upcoming", {
+      params: { api_key: key },
+    })
+    .then((response) => response.data);
+};
+
 const getMoviesBySearchTerm = (searchTerm: string): Promise<TmdbResponse> => {
   return axios
     .get("https://api.themoviedb.org/3/search/movie", {
@@ -56,6 +72,8 @@ const getGenres = (): Promise<GenreResponse> => {
 
 export {
   getPopularMovies,
+  getTrendingMovies,
+  getUpcomingMovies,
   getMoviesBySearchTerm,
   getMoviesByDiscover,
   getMovieById,

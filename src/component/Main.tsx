@@ -7,14 +7,18 @@ import {
   getMoviesByDiscover,
   getMoviesBySearchTerm,
   getPopularMovies,
+  getTrendingMovies,
+  getUpcomingMovies,
 } from "../services/TmdbService";
 import CriteriaForm from "./CriteriaForm";
 import "./Main.css";
 import MovieList from "./MovieList";
+import MovieList2 from "./MovieList2";
 
 const Main = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
-  // const [searchTerm, setSearchTerm] = useState("");
+  const [trendMovies, setTrendMovies] = useState<Movie[]>([]);
+  const [upcomingMovies, setUpcomingMovies] = useState<Movie[]>([]);
   const [searchParams] = useSearchParams();
   const searchTerm = searchParams.get("query");
   const genres = searchParams.get("with_genres");
@@ -31,6 +35,10 @@ const Main = () => {
       );
     } else {
       getPopularMovies().then((response) => setMovies(response.results));
+      getTrendingMovies().then((response) => setTrendMovies(response.results));
+      getUpcomingMovies().then((response) =>
+        setUpcomingMovies(response.results)
+      );
     }
   }, [searchTerm, genres, year]);
 
@@ -38,11 +46,21 @@ const Main = () => {
     <div className="Main">
       <CriteriaForm />
       {searchTerm || genres || year ? (
-        <h2>Search Results</h2>
+        <>
+          <h2>Search Results</h2>
+          <MovieList2 movies={movies} />
+        </>
       ) : (
-        <h2>Trending Movies</h2>
+        <>
+          {" "}
+          <h2>Trending Movies</h2>
+          <MovieList movies={trendMovies} />
+          <h2>Popular Movies</h2>
+          <MovieList movies={movies} />
+          <h2>Upcoming Movies</h2>
+          <MovieList movies={upcomingMovies} />
+        </>
       )}
-      <MovieList movies={movies} />
     </div>
   );
 };

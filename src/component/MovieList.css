@@ -1,6 +1,8 @@
 .MovieList ul {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
+  overflow-x: auto;
+  /* justify-content: space-evenly; */
+  margin: 0 20px;
 }

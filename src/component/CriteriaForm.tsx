@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { GeneratedIdentifierFlags } from "typescript";
 import Filters from "../models/Filters";
 import Genre from "../models/Genre";
 import { getGenres } from "../services/TmdbService";
@@ -13,12 +14,15 @@ const CriteriaForm = () => {
 
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
-    navigate(
-      `/discover?${new URLSearchParams({
-        with_genres: genre,
-        primary_release_year: year,
-      })}`
-    );
+
+    const discover: any = {
+      ...(genre ? { with_genres: genre } : {}),
+      ...(year ? { primary_release_year: year } : {}),
+    };
+
+    console.log(discover);
+
+    navigate(`/discover?${new URLSearchParams(discover)}`);
   };
 
   useEffect(() => {
@@ -33,10 +37,14 @@ const CriteriaForm = () => {
         value={genre}
         onChange={(e) => setGenre(e.target.value)}
       >
-        <option value="">Select</option>
-        <option value="27">Horror</option>
-        <option value="28">Action</option>
-        <option value="18">Drama</option>
+        <>
+          <option value="">Select</option>
+          {genres.map((genre) => (
+            <option key={genre.id} value={genre.id}>
+              {genre.name}
+            </option>
+          ))}
+        </>
       </select>
       <label htmlFor="year" className="year">
         Year:
