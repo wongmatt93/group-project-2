@@ -7,7 +7,9 @@ const Header = () => {
     <div className="Header">
       <div className="test">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <h1>BetterIMDb</h1>
+          <h1>
+            <img src="/our-logo.png" alt="BetterIMDb" />
+          </h1>
         </Link>
         <SearchForm />
       </div>

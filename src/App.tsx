@@ -9,6 +9,7 @@ import {
 import Header from "./component/Header";
 import WatchList from "./component/WatchList";
 import MovieOverview from "./component/MovieOverview";
+import Footer from "./component/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/movies/watchlist" element={<WatchList />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

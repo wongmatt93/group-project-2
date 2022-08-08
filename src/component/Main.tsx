@@ -11,6 +11,7 @@ import {
   getUpcomingMovies,
 } from "../services/TmdbService";
 import CriteriaForm from "./CriteriaForm";
+import Footer from "./Footer";
 import "./Main.css";
 import MovieList from "./MovieList";
 import MovieList2 from "./MovieList2";
