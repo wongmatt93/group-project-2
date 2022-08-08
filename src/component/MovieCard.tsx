@@ -32,7 +32,7 @@ const MovieCard = ({ movie }: Props) => {
           onClick={() => addWatchList(movie)}
         ></i>
       )}
-      <p>{movie.title}</p>
+      <p className="cardtitle">{movie.title}</p>
     </li>
   );
 };

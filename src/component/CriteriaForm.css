@@ -3,6 +3,21 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  color: white;
+}
+
+.CriteriaForm select,
+.CriteriaForm input {
+  border-radius: 5px;
+  background-color: #083449;
+  color: white;
+  border: 1px solid white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .CriteriaForm .year {
@@ -15,6 +30,10 @@
 
 .CriteriaForm button {
   margin-left: 10px;
+  border-radius: 5px;
+  background-color: #083449;
+  color: white;
+  border: 1px solid white;
 }
 
 .CriteriaForm label {
