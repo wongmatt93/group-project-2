@@ -4,13 +4,13 @@ const Footer = () => {
   return (
     <div className="Footer">
       <div className="information">
-        <p>Help</p>
-        <p>About</p>
-        <p>Feedback</p>
-        <p>Terms and Policies</p>
+        <p className="click">Help</p>
+        <p className="click">About</p>
+        <p className="click">Feedback</p>
+        <p className="click">Terms and Policies</p>
 
-        <p>Careers</p>
-        <p>Investor Relations</p>
+        <p className="click">Careers</p>
+        <p className="click">Investor Relations</p>
       </div>
       <p className="copyright">© 2022 BetterIMDb</p>
     </div>

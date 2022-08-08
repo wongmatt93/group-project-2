@@ -6,6 +6,11 @@
   align-items: center;
   width: 60%;
 }
+
+.Footer .click:hover {
+  cursor: pointer;
+}
+
 .Footer {
   background-color: #083449;
   display: flex;
