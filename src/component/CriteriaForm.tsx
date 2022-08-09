@@ -31,45 +31,47 @@ const CriteriaForm = () => {
 
   return (
     <form className="CriteriaForm" onSubmit={(e) => handleSubmit(e)}>
-      <label htmlFor="genre">Genre: </label>
-      <select
-        id="genre"
-        value={genre}
-        onChange={(e) => setGenre(e.target.value)}
-      >
-        <>
-          <option value="">Select</option>
-          {genres.map((genre) => (
-            <option key={genre.id} value={genre.id}>
-              {genre.name}
-            </option>
-          ))}
-        </>
-      </select>
-      <label htmlFor="year" className="year">
-        Year:
-      </label>
-      <input
-        type="number"
-        id="year"
-        value={year}
-        min="1880"
-        max="2022"
-        onChange={(e) => setYear(e.target.value)}
-      />
-      <label htmlFor="votes" className="votes">
-        Rating:{" "}
-      </label>
-      <input
-        type="number"
-        name="votes"
-        id="votes"
-        min="0"
-        max="10"
-        value={votes}
-        onChange={(e) => setVotes(e.target.value)}
-      />
-      <button>Discover</button>
+      <div>
+        <label htmlFor="genre">Genre: </label>
+        <select
+          id="genre"
+          value={genre}
+          onChange={(e) => setGenre(e.target.value)}
+        >
+          <>
+            <option value="">Select</option>
+            {genres.map((genre) => (
+              <option key={genre.id} value={genre.id}>
+                {genre.name}
+              </option>
+            ))}
+          </>
+        </select>
+        <label htmlFor="year" className="year">
+          Year:
+        </label>
+        <input
+          type="number"
+          id="year"
+          value={year}
+          min="1880"
+          max="2022"
+          onChange={(e) => setYear(e.target.value)}
+        />
+        <label htmlFor="votes" className="votes">
+          Rating:{" "}
+        </label>
+        <input
+          type="number"
+          name="votes"
+          id="votes"
+          min="0"
+          max="10"
+          value={votes}
+          onChange={(e) => setVotes(e.target.value)}
+        />
+      </div>
+      <button>Discover Movies</button>
     </form>
   );
 };
