@@ -42,11 +42,17 @@ const getMoviesBySearchTerm = (searchTerm: string): Promise<TmdbResponse> => {
 };
 const getMoviesByDiscover = (
   genres: string | null,
-  year: string | null
+  year: string | null,
+  votes: string | null
 ): Promise<TmdbResponse> => {
   return axios
     .get("https://api.themoviedb.org/3/discover/movie", {
-      params: { api_key: key, with_genres: genres, primary_release_year: year },
+      params: {
+        api_key: key,
+        with_genres: genres,
+        primary_release_year: year,
+        "vote_average.gte": votes,
+      },
     })
     .then((response) => {
       return response.data;

@@ -9,6 +9,7 @@ const SearchForm = () => {
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
     navigate(`/search?${new URLSearchParams({ query: inquiry })}`);
+    setInquiry("");
   };
 
   return (
