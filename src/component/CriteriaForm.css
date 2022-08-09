@@ -21,7 +21,7 @@ input::-webkit-inner-spin-button {
 }
 
 .CriteriaForm .year {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .CriteriaForm #year {
@@ -29,7 +29,7 @@ input::-webkit-inner-spin-button {
 }
 
 .CriteriaForm .votes {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .CriteriaForm #votes {

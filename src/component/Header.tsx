@@ -21,7 +21,7 @@ const Header = () => {
       <Link
         to="/movies/watchlist"
         style={{ textDecoration: "none" }}
-        className="wtf"
+        className="watchlist"
       >
         Watchlist
       </Link>

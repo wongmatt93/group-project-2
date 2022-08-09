@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: #083449;
-  padding: 0 40px;
+  padding: 0 5%;
   font-family: "Hind", sans-serif;
 }
 
@@ -29,10 +29,10 @@
   align-items: center;
 }
 
-.Header .wtf {
+.Header .watchlist {
   color: white;
 }
-.Header .wtf:hover {
+.Header .watchlist:hover {
   border-bottom: 1px solid rgb(255, 255, 255, 0.5);
   padding-top: 1px;
 }

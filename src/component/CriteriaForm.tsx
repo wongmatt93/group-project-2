@@ -1,7 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { GeneratedIdentifierFlags } from "typescript";
-import Filters from "../models/Filters";
 import Genre from "../models/Genre";
 import { getGenres } from "../services/TmdbService";
 import "./CriteriaForm.css";
