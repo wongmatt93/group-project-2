@@ -11,6 +11,7 @@ const CriteriaForm = () => {
   const [genres, setGenres] = useState<Genre[]>([]);
   const [genre, setGenre] = useState("");
   const [year, setYear] = useState("");
+  const [votes, setVotes] = useState("");
 
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
@@ -18,6 +19,7 @@ const CriteriaForm = () => {
     const discover: any = {
       ...(genre ? { with_genres: genre } : {}),
       ...(year ? { primary_release_year: year } : {}),
+      ...(votes ? { "vote_average.gte": votes } : {}),
     };
 
     console.log(discover);
@@ -57,7 +59,19 @@ const CriteriaForm = () => {
         max="2022"
         onChange={(e) => setYear(e.target.value)}
       />
-      <button>Advanced Search</button>
+      <label htmlFor="votes" className="votes">
+        Rating:{" "}
+      </label>
+      <input
+        type="number"
+        name="votes"
+        id="votes"
+        min="0"
+        max="10"
+        value={votes}
+        onChange={(e) => setVotes(e.target.value)}
+      />
+      <button>Discover Movies</button>
     </form>
   );
 };

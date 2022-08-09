@@ -11,7 +11,6 @@ import {
   getUpcomingMovies,
 } from "../services/TmdbService";
 import CriteriaForm from "./CriteriaForm";
-import Footer from "./Footer";
 import "./Main.css";
 import MovieList from "./MovieList";
 import MovieList2 from "./MovieList2";
@@ -24,14 +23,15 @@ const Main = () => {
   const searchTerm = searchParams.get("query");
   const genres = searchParams.get("with_genres");
   const year = searchParams.get("primary_release_year");
+  const votes = searchParams.get("vote_average.gte");
 
   useEffect(() => {
     if (searchTerm) {
       getMoviesBySearchTerm(searchTerm).then((response) =>
         setMovies(response.results)
       );
-    } else if (genres || year) {
-      getMoviesByDiscover(genres, year).then((response) =>
+    } else if (genres || year || votes) {
+      getMoviesByDiscover(genres, year, votes).then((response) =>
         setMovies(response.results)
       );
     } else {
@@ -41,12 +41,12 @@ const Main = () => {
         setUpcomingMovies(response.results)
       );
     }
-  }, [searchTerm, genres, year]);
+  }, [searchTerm, genres, year, votes]);
 
   return (
     <div className="Main">
       <CriteriaForm />
-      {searchTerm || genres || year ? (
+      {searchTerm || genres || year || votes ? (
         <>
           <h2>Search Results</h2>
           <MovieList2 movies={movies} />
