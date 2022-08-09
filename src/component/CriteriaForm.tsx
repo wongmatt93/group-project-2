@@ -71,7 +71,7 @@ const CriteriaForm = () => {
         value={votes}
         onChange={(e) => setVotes(e.target.value)}
       />
-      <button>Discover Movies</button>
+      <button>Discover</button>
     </form>
   );
 };
