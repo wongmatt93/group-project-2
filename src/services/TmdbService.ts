@@ -17,7 +17,7 @@ const getPopularMovies = (): Promise<TmdbResponse> => {
 
 const getTrendingMovies = (): Promise<TmdbResponse> => {
   return axios
-    .get("https://api.themoviedb.org/3/trending/all/day", {
+    .get("https://api.themoviedb.org/3/trending/movie/day", {
       params: { api_key: key },
     })
     .then((response) => response.data);
